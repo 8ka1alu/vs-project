@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message =>
 {
-    if (message.channel.name === 'Ｎグローバル')
+    if (message.channel.name === 'ｎグローバル')
     {
         if (message.author.bot) return;
         if (message.attachments.size <= 0)
@@ -24,7 +24,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'Ｎグローバル')
+                if (channel.name === 'ｎグローバル')
                 {
                     channel.send(embed)
                     return;
@@ -40,7 +40,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'Ｎグローバル')
+                if (channel.name === 'ｎグローバル')
                 {
                     channel.send(embed)
                     return;
