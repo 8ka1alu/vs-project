@@ -12,8 +12,8 @@ client.on('message', message =>{
         return;
     }
     if(message.content == '!n-doukoukai') {
-      var member = message.guild.roles.fetch(499400272209248267) 
-      message.member.addRole(member);
+        var member = message.guild.roles.fetch(499400272209248267) 
+        message.member.addRole(member);
     }
 });  
 
