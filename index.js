@@ -7,6 +7,16 @@ client.on('ready', message =>
   console.log('Logged in as ${client.user.tag}!');
 });
 
+client.on('message', message =>{
+    if(message.author.bot){
+        return;
+    }
+    if(message.content == '!n-doukoukai') {
+      var member = message.guild.roles.fetch(499400272209248267) 
+      message.member.addRole(member);
+    }
+});  
+
 client.on('message', message =>
 {
     if (message.channel.name === 'ｎグローバル')
