@@ -1,3 +1,10 @@
+const http = require('http');
+http.createServer(function(request, response)
+{
+	response.writeHead(200, {'Content-Type': 'text/plain'});
+	response.end('Discord bot is active now \n');
+}).listen(3000);
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -13,8 +20,7 @@ client.on('message', message =>{
     }
     if(message.content == '!n-doukoukai') {
         var member = message.guild.roles.fetch(499400272209248267) 
-        message.member.addRole(member);
-    }
+        message.author.member.addRole(member);
 });  
 
 client.on('message', message =>
