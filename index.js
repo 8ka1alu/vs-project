@@ -9,9 +9,6 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.content.match(/discord.gg/)) {
-        message.delete(100)
-    }
     if (message.channel.name === 'noa-global-chat')
     {
         if (message.author.bot) return;
@@ -55,6 +52,9 @@ client.on('message', message =>
             return;
         });
     }
+    if (message.content.match(/discord.gg/)) {
+        message.delete(100)
+   }
 })
 
 client.login(process.env.BOT_TOKEN);
