@@ -12,6 +12,9 @@ client.on('message', message =>
     if (message.channel.name === 'noa-global-chat')
     {
         if (message.author.bot) return;
+        if (message.content.match(/discord.gg/)) {
+            message.delete(100)
+        }
         if (message.attachments.size <= 0)
         {
             message.delete()
@@ -52,9 +55,6 @@ client.on('message', message =>
             return;
         });
     }
-    if (message.content.match(/discord.gg/)) {
-        message.delete(100)
-   }
 })
 
 client.login(process.env.BOT_TOKEN);
