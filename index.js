@@ -12,7 +12,8 @@ client.on('message', message =>
     if (message.channel.name === 'noa-global-chat')
     {
         if (message.author.bot) return;
-        if (message.content.match(/discord.gg/)) {
+        if (message.content.match(/discord.gg/)) 
+        {
             message.delete(100)
         }
         if (message.attachments.size <= 0)
