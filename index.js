@@ -42,7 +42,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'ｎグローバル')
+                if (channel.name === 'noa-global-chat')
                 {
                     channel.send(embed)
                     return;
