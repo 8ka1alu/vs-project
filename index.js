@@ -12,6 +12,10 @@ client.on('message', message =>
     if (message.channel.name === 'noa-global-chat')
     {
         if (message.author.bot) return;
+        if (message.content.includes("敗北者")) 
+        {
+            message.delete()
+        }
         if (message.attachments.size <= 0)
         {
             message.delete()
