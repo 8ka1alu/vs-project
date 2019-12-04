@@ -10,11 +10,6 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.content.match(/c!start/)) {
-    setInterval(function () {
-        message.guild.channels.find("id", "651434346376462355").setName("Player Count: " + pcount);
-    }, 500);
-}
     if (message.channel.name === 'noa-global-chat')
     {
         if (message.author.bot) return;
