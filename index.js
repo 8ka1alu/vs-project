@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-let count = 0;
 
 client.on('ready', message =>
 {
@@ -10,13 +9,9 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.channel.name === 'noa-global-chat')
+    if (message.channel.name === 'チャンネル名')
     {
         if (message.author.bot) return;
-        if (message.content.includes(/敗北者/)) 
-        {
-            message.delete()
-        }
         if (message.attachments.size <= 0)
         {
             message.delete()
@@ -31,7 +26,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'noa-global-chat')
+                if (channel.name === 'チャンネル名')
                 {
                     channel.send(embed)
                     return;
@@ -47,7 +42,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'noa-global-chat')
+                if (channel.name === 'チャンネル名')
                 {
                     channel.send(embed)
                     return;
