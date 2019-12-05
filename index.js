@@ -9,7 +9,7 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.channel.name === 'チャンネル名')
+    if (message.channel.name === 'noa-global-chat')
     {
         if (message.author.bot) return;
         if (message.attachments.size <= 0)
@@ -26,7 +26,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'チャンネル名')
+                if (channel.name === 'noa-global-chat')
                 {
                     channel.send(embed)
                     return;
@@ -42,7 +42,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'チャンネル名')
+                if (channel.name === 'noa-global-chat')
                 {
                     channel.send(embed)
                     return;
