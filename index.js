@@ -15,6 +15,7 @@ client.on('message', message =>
         if (message.content.match(/discord.gg/)) 
         {
             message.delete(100)
+            return;
         }
         if (message.attachments.size <= 0)
         {
