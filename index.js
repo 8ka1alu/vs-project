@@ -12,6 +12,10 @@ client.on('message', message =>
     if (message.channel.name === 'toho-project-chat')
     {
         if (message.author.bot) return;
+        if (message.content.match(/discord.gg/)) 
+        {
+            message.delete(100)
+        }
         if (message.attachments.size <= 0)
         {
             message.delete()
