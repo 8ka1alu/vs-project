@@ -6,13 +6,13 @@ client.on('ready', message =>
     client.user.setPresence({ game: { name: '東方文花帖' } });  
     console.log('Hallo Warld!!');
 
-    const ch_name = "文々。新聞";
+    const ch_name = "スキマ";
 
     client.channels.forEach(channel =>
     {
         if (channel.name === ch_name) 
         {
-            channel.send("さあ、手加減してあげるから、本気で掛かってきなさい！")
+            channel.send("幻想郷は、全てを受け入れるのよ。それはそれは残酷な話ですわ。")
             return;
         }
         return;
@@ -21,7 +21,7 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.channel.name === '文々。新聞')
+    if (message.channel.name === 'スキマ')
     {
         if (message.author.bot) return;
         if (message.content.match(/discord.gg/)) 
@@ -43,7 +43,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === '文々。新聞')
+                if (channel.name === 'スキマ')
                 {
                     channel.send(embed)
                     return;
@@ -59,7 +59,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === '文々。新聞')
+                if (channel.name === 'スキマ')
                 {
                     channel.send(embed)
                     return;
