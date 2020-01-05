@@ -3,13 +3,25 @@ const client = new Discord.Client();
 
 client.on('ready', message =>
 {
-  client.user.setPresence({ game: { name: '' } });  
-  console.log('Hallo Warld!!');
-});
+    client.user.setPresence({ game: { name: '東方文花帖' } });  
+    console.log('Hallo Warld!!');
+
+    const ch_name = "toho-project-chat";
+
+    client.channels.forEach(channel =>
+    {
+        if (channel.name === ch_name) 
+        {
+            channel.send("再起動しました！")
+            return;
+        }
+        return;
+    });
+})
 
 client.on('message', message =>
 {
-    if (message.channel.name === 'toho-project-chat')
+    if (message.channel.name === '文々。新聞')
     {
         if (message.author.bot) return;
         if (message.content.match(/discord.gg/)) 
@@ -31,7 +43,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'toho-project-chat')
+                if (channel.name === '文々。新聞')
                 {
                     channel.send(embed)
                     return;
@@ -47,7 +59,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'toho-project-chat')
+                if (channel.name === '文々。新聞')
                 {
                     channel.send(embed)
                     return;
