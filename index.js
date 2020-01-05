@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', message =>
 {
-    client.user.setPresence({ game: { name: '境界を操る程度の能力' }, status: 'add' });  
+    client.user.setPresence({ game: { name: '境界を操る程度の能力' }, status: 'idle' });  
     console.log('幻想郷は全てを受け入れる');
 
     const ch_name = "スキマ";
