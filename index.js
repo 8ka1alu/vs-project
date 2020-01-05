@@ -6,7 +6,7 @@ client.on('ready', message =>
     client.user.setPresence({ game: { name: '東方文花帖' } });  
     console.log('Hallo Warld!!');
 
-    const ch_name = "toho-project-chat";
+    const ch_name = "文々。新聞";
 
     client.channels.forEach(channel =>
     {
