@@ -21,6 +21,12 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
+    if (message.content.startswitch('addchannel '))
+    {
+        ver channelname=message.content.replace(/^addchannel/, '')
+        message.guild.createChannel(channelname)
+        return;
+    }
     if (message.channel.name === 'スキマ')
     {
         if (message.author.bot) return;
