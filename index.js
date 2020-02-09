@@ -21,6 +21,25 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
+    // コマンドとチャンネル名指定の引数にわける
+    let arg = message.content.split( /\s+/ );
+    const cmd = arg.shift();
+    const ch_name = arg[0];
+ 
+    if ( cmd === '!ch' )
+    {
+        // 既に同名のチャンネルが存在していないかチェック
+        // 同名チャンネルも作成できるが、消すときに困るので同名は弾く
+        if ( !message.guild.channels.exists( 'name', ch_name ) )
+        {
+            message.guild.createChannel( ch_name, 'text' )
+            .then( (ch) => 
+            {
+               ch.send( message.member.displayName + 'が作成しました' );
+            })
+            .catch( (err) => { console.log( err ); } );
+        }
+    }
     if(message.content.startsWith('addch')) 
     {
         var channelName = message.content.replace(/addch/, 'a');
