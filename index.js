@@ -23,7 +23,7 @@ client.on('message', message =>
 {
     if(message.content.startsWith('addch ')) 
     {
-        var channelName = message.content.replace(/^addch /, ''); 
+        var channelName = message.content.replace(/addch /, ''); 
         message.guild.createChannel(channelName);
         return;
     }
