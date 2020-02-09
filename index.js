@@ -21,23 +21,38 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    // コマンドとチャンネル名指定の引数にわける
-    let arg = message.content.split( /\s+/ );
-    const cmd = arg.shift();
-    const ch_name = arg[0];
- 
-    if ( cmd === '!ch' )
+    if (message.content.startsWith('!new')) 
     {
-        // 既に同名のチャンネルが存在していないかチェック
-        // 同名チャンネルも作成できるが、消すときに困るので同名は弾く
-        if ( !message.guild.channels.exists( 'name', ch_name ) )
+        // Fetch all the channels in the guild.
+        let allChannels = message.guild.channels;
+        // Filter out all the non-text channels.
+        let textChannels = allChannels.filter((channel) => 
         {
-            message.guild.createChannel( ch_name, 'text' )
-            .then( (ch) => 
+            return channel.type === "text";    
+        });
+        // Filter out all the text channels whose name isn't 'support-(number)'.
+        let supportChannels = textChannels.filter((textChannel) => 
+        {
+            // Checks whether a channel name has format 'support-(number)'. Look into Regex for more info.
+            return textChannel.name.match(/^(support-)\d+$/g);
+        });
+        // Check if there are any support channels.
+        if (supportChannels.length) 
+        {
+            // Get the numbers from the channel name.
+            let numbers = supportChannels.map((supportChannel) => 
             {
-               ch.send( message.member.displayName + 'が作成しました' );
-            })
-            .catch( (err) => { console.log( err ); } );
+                return parseInt(supportChannel.name.split('-')[1]);
+            });
+            // Get the highest number from the array.
+            let highestNumber = Math.max(...numbers);
+            // Create a new support channel with the highest number + 1.
+            message.guild.createChannel(`support-${highestNumber+1}`, 'text');
+        } 
+        else 
+        {
+            // There are no support channels, thus create the first one.
+            message.guild.createChannel('support-1', 'text');
         }
     }
     if(message.content.startsWith('addch')) 
