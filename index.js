@@ -31,7 +31,8 @@ client.on('message', message =>
         if (message.guild.channels.exists( 'name', ch_name ) )
         {
             message.guild.createChannel( ch_name, 'text' )
-        })
+            return;
+        }
     }
     if (message.channel.name === 'スキマ')
     {
