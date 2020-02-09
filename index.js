@@ -21,10 +21,10 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if(message.content.startsWith('addch ')) 
+    if(message.content.startsWith('addch')) 
     {
-        var channelName = message.content.replace(/addch /, 'a')
-        message.guild.createChannel(channelName)
+        var channelName = message.content.replace(/addch/, 'a');
+        message.guild.createChannel(channelName);
         return;
     }
     if (message.channel.name === 'スキマ')
