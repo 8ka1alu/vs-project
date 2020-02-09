@@ -21,11 +21,17 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.content.startswitch('addchannel '))
+    // コマンドとチャンネル名指定の引数にわける
+    let arg = message.content.split( /\s+/ );
+    const cmd = arg.shift();
+    const ch_name = arg[0];
+ 
+    if ( cmd === '!ch' )
     {
-        ver channelname=message.content.replace(/^addchannel/, '')
-        message.guild.createChannel(channelname)
-        return;
+        if (message.guild.channels.exists( 'name', ch_name ) )
+        {
+            message.guild.createChannel( ch_name, 'text' )
+        })
     }
     if (message.channel.name === 'スキマ')
     {
