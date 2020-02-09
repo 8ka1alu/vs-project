@@ -21,19 +21,6 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    // コマンドとチャンネル名指定の引数にわける
-    let arg = message.content.split( /\s+/ );
-    const cmd = arg.shift();
-    const ch_name = arg[0];
- 
-    if ( cmd === '!ch' )
-    {
-        if (message.guild.channels.exists( 'name', ch_name ) )
-        {
-            message.guild.createChannel( ch_name, 'text' )
-            return;
-        }
-    }
     if (message.channel.name === 'スキマ')
     {
         if (message.author.bot) return;
