@@ -21,6 +21,12 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
+    if(message.content.startsWith('addch ')) 
+    {
+        var channelName = message.content.replace(/^addch /, ''); 
+        message.guild.createChannel(channelName);
+        return;
+    }
     if (message.channel.name === 'スキマ')
     {
         if (message.author.bot) return;
