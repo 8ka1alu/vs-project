@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const pcount = 0
 
 client.on('ready', message =>
 {
@@ -22,14 +21,6 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.content.match(/c!start/)) 
-    {
-        let pcount = pcount + 1
-        setInterval(function () 
-        {
-            message.guild.channels.find("id", "676314154512023608").setName("Player Count: " + pcount);
-        }, 500);
-    }
     if (message.channel.name === 'スキマ')
     {
         if (message.author.bot) return;
