@@ -24,9 +24,10 @@ client.on('message', message =>
 {
     if (message.content.match(/c!start/)) 
     {
+        const pcount = pcount + 1
         setInterval(function () 
         {
-            message.guild.channels.find("id", "676314154512023608").setName("Player Count: " + pcount+1);
+            message.guild.channels.find("id", "676314154512023608").setName("Player Count: " + pcount);
         }, 500);
     }
     if (message.channel.name === 'スキマ')
