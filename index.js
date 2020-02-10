@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const pcount = pcount + 1
+const pcount = 0
 
 client.on('ready', message =>
 {
@@ -24,6 +24,7 @@ client.on('message', message =>
 {
     if (message.content.match(/c!start/)) 
     {
+        let pcount = pcount + 1
         setInterval(function () 
         {
             message.guild.channels.find("id", "676314154512023608").setName("Player Count: " + pcount);
