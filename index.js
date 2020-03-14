@@ -3,16 +3,16 @@ const client = new Discord.Client();
 
 client.on('ready', message =>
 {
-    client.user.setPresence({ game: { name: '境界を操る程度の能力' }, status: 'idle' });  
+    client.user.setPresence({ game: { name: '女神の祝福' }, status: 'idle' });  
     console.log('幻想郷は全てを受け入れる');
 
-    const ch_name = "スキマ";
+    const ch_name = "グローバルチャット";
 
     client.channels.forEach(channel =>
     {
         if (channel.name === ch_name) 
         {
-            channel.send("幻想郷は、全てを受け入れるのよ。それはそれは残酷な話ですわ。")
+            channel.send(f"わたしは{client.user.name}です。ルチアとお呼びください。")
             return;
         }
         return;
@@ -21,7 +21,7 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.channel.name === 'スキマ')
+    if (message.channel.name === 'グローバルチャット')
     {
         if (message.author.bot) return;
         if (message.content.match(/discord.gg/)) 
@@ -43,7 +43,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'スキマ')
+                if (channel.name === 'グローバルチャット')
                 {
                     channel.send(embed)
                     return;
@@ -59,7 +59,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'スキマ')
+                if (channel.name === 'グローバルチャット')
                 {
                     channel.send(embed)
                     return;
