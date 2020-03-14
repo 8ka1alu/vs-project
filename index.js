@@ -12,7 +12,7 @@ client.on('ready', message =>
     {
         if (channel.name === ch_name) 
         {
-            channel.send(f"わたしは{client.user.name}です。ルチアとお呼びください。")
+            channel.send("わたしは${client.user.name}です。ルチアとお呼びください。")
             return;
         }
         return;
