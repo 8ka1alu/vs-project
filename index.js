@@ -6,7 +6,7 @@ client.on('ready', message =>
     client.user.setPresence({ game: { name: '女神の祝福' }, status: 'idle' });  
     console.log('ルチアーナ起動');
 
-    const ch_name = "グローバルチャット";
+    const ch_name = "【グローバルチャット】";
 
     client.channels.forEach(channel =>
     {
@@ -21,7 +21,7 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
-    if (message.channel.name === 'グローバルチャット')
+    if (message.channel.name === '【グローバルチャット】')
     {
         if (message.author.bot) return;
         if (message.content.match(/discord.gg/)) 
@@ -43,7 +43,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'グローバルチャット')
+                if (channel.name === '【グローバルチャット】')
                 {
                     channel.send(embed)
                     return;
@@ -59,7 +59,7 @@ client.on('message', message =>
                     .setColor(0x2C2F33)
                     .setFooter(message.guild.name, message.guild.iconURL)
                     .setTimestamp()
-                if (channel.name === 'グローバルチャット')
+                if (channel.name === '【グローバルチャット】')
                 {
                     channel.send(embed)
                     return;
