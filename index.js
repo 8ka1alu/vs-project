@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', message =>
 {
     client.user.setPresence({ game: { name: '女神の祝福' }, status: 'idle' });  
-    console.log('幻想郷は全てを受け入れる');
+    console.log('ルチアーナ起動');
 
     const ch_name = "グローバルチャット";
 
