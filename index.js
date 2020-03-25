@@ -20,6 +20,27 @@ client.on('ready', message =>
                     color: 16757683,
                     title: "参加鯖名一覧",
                     description: "BOSS協定締結している鯖です。",
+                    fields: [
+                    {
+                        name: "inline field :dog:",
+                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                    },
+                    {
+                        name: "inline field :dog:",
+                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                    },
+                    {
+                        name: "inline field :dog:",
+                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                    },
+                    {
+                        name: "inline field :dog:",
+                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                    },
+                    {
+                        name: "inline field :dog:",
+                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                    }]
                 }
             })
             return;
