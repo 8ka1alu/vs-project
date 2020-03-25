@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const talkedRecently = new Set();
 
 client.on('ready', message =>
 {
@@ -69,6 +70,11 @@ client.on('message', message =>
             message.delete(100)
             return;
         }
+        if (talkedRecently.has(msg.author.id)) 
+        {
+            msg.channel.send("クールダウン中です。 - " + msg.author)
+            return;
+        }
         if (message.attachments.size <= 0)
         {
             message.delete()
@@ -86,6 +92,11 @@ client.on('message', message =>
                 if (channel.name === '【グローバルチャット】')
                 {
                     channel.send(embed)
+                    talkedRecently.add(msg.author.id);
+                    setTimeout(() => 
+                    {
+                        talkedRecently.delete(msg.author.id);
+                    }, 5000)
                     return;
                 }
                 return;
@@ -102,6 +113,11 @@ client.on('message', message =>
                 if (channel.name === '【グローバルチャット】')
                 {
                     channel.send(embed)
+                    talkedRecently.add(msg.author.id);
+                    setTimeout(() => 
+                    {
+                        talkedRecently.delete(msg.author.id);
+                    }, 5000)
                     return;
                 }
                 return;
