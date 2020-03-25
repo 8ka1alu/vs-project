@@ -72,7 +72,7 @@ client.on('message', message =>
         }
         if (talkedRecently.has(message.author.id)) 
         {
-            message.channel.send("クールダウン中です。 - " + message.author)
+            message.channel.send("5秒間発言できません。-" + message.author)
             return;
         }
         if (message.attachments.size <= 0)
