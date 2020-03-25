@@ -72,7 +72,7 @@ client.on('message', message =>
         }
         if (talkedRecently.has(message.author.id)) 
         {
-            const msg = message.channel.send("5秒間発言できません。(なお、このメッセージは5秒後にきえます。)-" + message.author)
+            var msg = message.channel.send("5秒間発言できません。(なお、このメッセージは5秒後にきえます。)-" + message.author)
             function sleep(waitSec, callbackFunc) 
             {
                 var spanedSec = 0;
