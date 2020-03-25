@@ -76,7 +76,7 @@ client.on('message', message =>
             sleep(5, function() 
             {
                 message.delete(100);
-            }
+            })
             return;
         }
         if (message.attachments.size <= 0)
