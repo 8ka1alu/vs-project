@@ -73,6 +73,19 @@ client.on('message', message =>
         if (talkedRecently.has(message.author.id)) 
         {
             message.channel.send("5秒間発言できません。(なお、このメッセージは5秒後にきえます。)-" + message.author)
+            function sleep(waitSec, callbackFunc) 
+            {
+                var spanedSec = 0;
+                var id = setInterval(function() 
+                {
+                    spanedSec++;
+                    if (spanedSec >= waitSec) 
+                    {
+                        clearInterval(id);
+                        if (callbackFunc) callbackFunc();
+                    }
+                }, 1000);
+            }
             sleep(5, function() 
             {
                 message.delete(100);
