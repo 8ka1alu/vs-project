@@ -28,6 +28,11 @@ client.on('ready', message =>
                     },
                     fields: [
                     {
+                        name: "B.O.S.S.本部",
+                        value: "[ここをクリック](https://discord.gg/UYRApY)",
+                        inline: true
+                    },
+                    {
                         name: "VIRTUAL SQUARE",
                         value: "[ここをクリック](https://discord.gg/6nhcRh9)",
                         inline: true
