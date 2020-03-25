@@ -75,7 +75,7 @@ client.on('message', message =>
             message.channel.send("5秒間発言できません。(なお、このメッセージは5秒後にきえます。)-" + message.author)
             sleep(5, function() 
             {
-                message.delete(100)
+                message.delete(100);
             }
             return;
         }
