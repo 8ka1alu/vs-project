@@ -13,6 +13,14 @@ client.on('ready', message =>
         if (channel.name === ch_name) 
         {
             channel.send("わたしは**ルチアーナ**です。**ルチア**とお呼びください。")
+            channel.send(
+            {
+                embed: 
+                {
+                    color: 16757683,
+                    description: 'やっはろー'
+                }
+            })
             return;
         }
         return;
