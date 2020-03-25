@@ -19,27 +19,33 @@ client.on('ready', message =>
                 {
                     color: 16757683,
                     title: "参加鯖名一覧",
+                    url: "https://discord.gg/ENxnsJM",
                     description: "BOSS協定締結している鯖です。",
                     fields: [
                     {
-                        name: "inline field :dog:",
-                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                        name: "VIRTUAL SQUARE",
+                        value: "[ここをクリック](https://discord.gg/6nhcRh9)",
+                        inline: true
                     },
                     {
-                        name: "inline field :dog:",
-                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                        name: "GaminGprotocol",
+                        value: "[ここをクリック](https://discord.gg/9m58qfR)",
+                        inline: true
                     },
                     {
-                        name: "inline field :dog:",
-                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                        name: "mayayの甘味処",
+                        value: "[ここをクリック](https://discord.gg/BrGG5HE)",
+                        inline: true
                     },
                     {
-                        name: "inline field :dog:",
-                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                        name: "暇な鯖",
+                        value: "[ここをクリック](https://discord.gg/7ruz7cA)",
+                        inline: true
                     },
                     {
-                        name: "inline field :dog:",
-                        value: "[これもinlineのfieldだよ](https://discordapp.com)",
+                        name: "†強欲の帝国†",
+                        value: "[ここをクリック](https://discord.gg/fkUmDN3)",
+                        inline: true
                     }]
                 }
             })
