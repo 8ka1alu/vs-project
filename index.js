@@ -18,7 +18,7 @@ client.on('ready', message =>
             {
                 embed: 
                 {
-                    color: 16757683,
+                    color: 15844367,
                     title: "参加鯖名一覧",
                     url: "https://discord.gg/ENxnsJM",
                     description: "BOSS協定締結している鯖です。",
