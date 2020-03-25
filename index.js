@@ -99,7 +99,7 @@ client.on('message', message =>
                     talkedRecently.add(message.author.id);
                     setTimeout(() => 
                     {
-                        talkedRecently.delete(message.author.id);
+                        talkedRecently.delete(message.author.id); 
                     }, 5000)
                     return;
                 }
