@@ -18,7 +18,8 @@ client.on('ready', message =>
                 embed: 
                 {
                     color: 16757683,
-                    description: 'やっはろー'
+                    title: "参加鯖名一覧",
+                    description: "BOSS協定締結している鯖です。",
                 }
             })
             return;
