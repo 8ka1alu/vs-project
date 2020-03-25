@@ -70,9 +70,9 @@ client.on('message', message =>
             message.delete(100)
             return;
         }
-        if (talkedRecently.has(msg.author.id)) 
+        if (talkedRecently.has(message.author.id)) 
         {
-            msg.channel.send("クールダウン中です。 - " + msg.author)
+            message.channel.send("クールダウン中です。 - " + message.author)
             return;
         }
         if (message.attachments.size <= 0)
@@ -92,10 +92,10 @@ client.on('message', message =>
                 if (channel.name === '【グローバルチャット】')
                 {
                     channel.send(embed)
-                    talkedRecently.add(msg.author.id);
+                    talkedRecently.add(message.author.id);
                     setTimeout(() => 
                     {
-                        talkedRecently.delete(msg.author.id);
+                        talkedRecently.delete(message.author.id);
                     }, 5000)
                     return;
                 }
@@ -113,10 +113,10 @@ client.on('message', message =>
                 if (channel.name === '【グローバルチャット】')
                 {
                     channel.send(embed)
-                    talkedRecently.add(msg.author.id);
+                    talkedRecently.add(message.author.id);
                     setTimeout(() => 
                     {
-                        talkedRecently.delete(msg.author.id);
+                        talkedRecently.delete(message.author.id);
                     }, 5000)
                     return;
                 }
