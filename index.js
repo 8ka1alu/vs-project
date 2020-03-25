@@ -21,6 +21,10 @@ client.on('ready', message =>
                     title: "参加鯖名一覧",
                     url: "https://discord.gg/ENxnsJM",
                     description: "BOSS協定締結している鯖です。",
+                    thumbnail: 
+                    {
+                        url: "https://cdn.discordapp.com/attachments/692195402304192542/692236540625158144/JPEG_20200324_191014.jpg"
+                    },
                     fields: [
                     {
                         name: "VIRTUAL SQUARE",
