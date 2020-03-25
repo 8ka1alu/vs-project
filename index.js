@@ -67,6 +67,15 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
+    if (message.channel.name === '雑談部屋')
+    {
+        if (message.content.startsWith('【開発状況閲覧希望】')) 
+        {
+            message.member.addRole('692213362624299030')
+            message.channel.send("付与しました" + message.author)
+            return;
+        };
+    }
     if (message.channel.name === '質問部屋')
     {
         if (message.content.startsWith('【質問】')) 
