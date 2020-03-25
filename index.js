@@ -72,24 +72,7 @@ client.on('message', message =>
         }
         if (talkedRecently.has(message.author.id)) 
         {
-            var msg = message.channel.send("5秒間発言できません。-" + message.author)
-            function sleep(waitSec, callbackFunc) 
-            {
-                var spanedSec = 0;
-                var id = setInterval(function() 
-                {
-                    spanedSec++;
-                    if (spanedSec >= waitSec) 
-                    {
-                        clearInterval(id);
-                        if (callbackFunc) callbackFunc();
-                    }
-                }, 1000);
-            }
-            sleep(5, function() 
-            {
-                msg.delete();
-            })
+            message.channel.send("5秒間発言できません。-" + message.author)
             return;
         }
         if (message.attachments.size <= 0)
