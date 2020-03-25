@@ -67,6 +67,24 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
+    if (message.channel.name === '質問部屋')
+    {
+        if (message.content.startsWith('【質問】')) 
+        {
+            message.member.addRole('691953560190976010')
+            message.channel.send("付与しました" + message.author)
+            return;
+        };
+    }
+    if (message.channel.name === '提案部屋')
+    {
+        if (message.content.startsWith('【提案】')) 
+        {
+            message.member.addRole('692264917591523349')
+            message.channel.send("付与しました" + message.author)
+            return;
+        };
+    }
     if (message.channel.name === '【グローバルチャット】')
     {
         if (message.author.bot) return;
