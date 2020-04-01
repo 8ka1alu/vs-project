@@ -4,7 +4,6 @@ const talkedRecently = new Set();
 
 client.on('ready', message =>
 {
-    client.user.setPresence({ game: { name: '女神の祝福' }, status: 'idle' });  
     console.log('ルチアーナ起動');
 
     const ch_name = "【グローバルチャット】";
