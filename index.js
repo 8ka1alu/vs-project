@@ -61,6 +61,12 @@ client.on('ready', message =>
 
 client.on('message', message =>
 {
+    if (message.content.includes('じゃんけん')) 
+    {
+       message.react('✊')
+            .then(() => message.react('✌'))
+            .then(() => message.react('✋'))
+    }
     if (message.channel.name === '雑談部屋')
     {
         if (message.content.startsWith('【開発状況閲覧希望】')) 
@@ -152,6 +158,34 @@ client.on('message', message =>
         });
     }
 })
+
+client.on('messageReactionAdd', async (reaction, user) => 
+{
+    // bot自身なら処理しない
+    if(user.username === client.user.username) 
+    {
+        return;
+    }
+    if(reaction.message.content.includes('じゃんけん')) 
+    {
+        if(reaction.emoji.name === '✊' || reaction.emoji.name === '✌' || reaction.emoji.name === '✋') 
+        {
+            var guChokiPa = Math.floor( Math.random() * 3 );
+            if(guChokiPa == 0) 
+            {
+                reaction.message.channel.send('✊');
+            } 
+            else if(guChokiPa == 1) 
+            {
+                reaction.message.channel.send('✌');
+            } 
+            else if(guChokiPa == 2) 
+            {
+                reaction.message.channel.send('✋');
+            }
+        }
+    }
+});
 
 client.login(process.env.BOT_TOKEN);
 
