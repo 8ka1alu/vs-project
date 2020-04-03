@@ -63,7 +63,7 @@ client.on('message', message =>
 {
     if (message.content.includes('じゃんけん')) 
     {
-       message.react('✊')
+        message.react('✊')
             .then(() => message.react('✌'))
             .then(() => message.react('✋'))
     }
